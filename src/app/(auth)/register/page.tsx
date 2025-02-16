@@ -3,7 +3,6 @@ import { AuthLayout } from "@/components/Auth/AuthLayout";
 import { FormRegister } from "@/components/Auth/FormRegister";
 import { useRegister } from "@/lib/hooks/useRegister";
 import { DialogAlert } from "@/components/ui/AlertDialog";
-import { Dialog } from "@radix-ui/react-dialog";
 
 export default function RegisterPage() {
   const {

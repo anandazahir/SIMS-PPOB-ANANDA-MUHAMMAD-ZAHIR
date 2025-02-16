@@ -64,7 +64,7 @@ export function useTransaction(params: string) {
       });
       refetchhistory();
       refetchsaldo();
-    } catch (err: any) {
+    } catch (error) {
       setDialog({
         open: true,
         message: `Gagal Membayar ${selectedService.service_name}`,

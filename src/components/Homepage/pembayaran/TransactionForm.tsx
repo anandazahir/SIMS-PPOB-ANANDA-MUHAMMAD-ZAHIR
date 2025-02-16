@@ -21,7 +21,6 @@ interface TransactionFormProps {
 export function TransactionForm({
   register,
   handleSubmit,
-  setValue,
   onSubmit,
   isLoading,
   service,
