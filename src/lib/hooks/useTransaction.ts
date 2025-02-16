@@ -70,6 +70,7 @@ export function useTransaction(params: string) {
         message: `Gagal Membayar ${selectedService.service_name}`,
         success: false,
       });
+      console.log(error);
     } finally {
       setIsSubmitting(false);
     }
