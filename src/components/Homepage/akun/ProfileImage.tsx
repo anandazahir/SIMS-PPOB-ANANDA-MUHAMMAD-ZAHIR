@@ -30,7 +30,9 @@ export function ProfileImage({
       />
       <div className="w-32 h-32 rounded-full overflow-hidden">
         <Image
-          src={previewImage || profileImage}
+          src={
+            previewImage || profileImage || "/Website Assets/Profile Photo.png"
+          }
           alt="Profile"
           width={128}
           height={128}

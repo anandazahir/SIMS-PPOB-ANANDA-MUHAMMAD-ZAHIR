@@ -32,7 +32,9 @@ export function ProfileSection({
           <>
             <div className="w-24 h-24 rounded-full overflow-hidden">
               <Image
-                src={profile?.profile_image || "/images/default-avatar.png"}
+                src={
+                  profile?.profile_image || "/Website Assets/Profile Photo.png"
+                }
                 alt="Profile"
                 width={96}
                 height={96}
