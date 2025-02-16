@@ -8,7 +8,7 @@ export function AuthHeader() {
       href="/"
     >
       <Image
-        src="/Website Assets/logo.png"
+        src="/Website Assets/Logo.png"
         alt="SIMS PPOB Logo"
         width={32}
         height={32}

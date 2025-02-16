@@ -44,7 +44,7 @@ export function Navbar() {
             className="flex items-center gap-2 font-semibold text-red-500"
           >
             <Image
-              src="/Website Assets/logo.png"
+              src="/Website Assets/Logo.png"
               alt="logo"
               width={32}
               height={32}

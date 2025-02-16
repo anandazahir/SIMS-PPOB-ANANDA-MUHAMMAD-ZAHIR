@@ -1,10 +1,9 @@
 import { cookies } from "@/lib/utils/cookies";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { DialogAlert } from "@/components/ui/AlertDialog";
 export default function LogoutButton() {
-  const router = useRouter();
   const [dialog, setDialog] = useState<{
     open: boolean;
     message: string;
@@ -16,9 +15,9 @@ export default function LogoutButton() {
   });
 
   const handleLogout = () => {
-    cookies.remove("token");
-    router.push("/");
     setDialog({ open: true, message: "Anda berhasil logout", success: true });
+    cookies.remove("token");
+    redirect("/login");
   };
 
   return (

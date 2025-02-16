@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginSchema, LoginRequest } from "@/lib/utils/scheme";
@@ -6,11 +6,13 @@ import { useLoginMutation } from "@/lib/api/services/authApi";
 import { cookies } from "@/lib/utils/cookies"; // Import helper cookies
 import { useState } from "react";
 
-
 export function useLogin() {
-  const router = useRouter();
   const [loginUser, { isLoading }] = useLoginMutation();
-  const [dialog, setDialog] = useState<{ open: boolean; message: string; success: boolean }>({
+  const [dialog, setDialog] = useState<{
+    open: boolean;
+    message: string;
+    success: boolean;
+  }>({
     open: false,
     message: "",
     success: false,
@@ -30,14 +32,17 @@ export function useLogin() {
       const response = await loginUser(data).unwrap();
       setDialog({ open: true, message: response.message, success: true });
       cookies.set("token", response.data.token, { expires: 7 });
-      router.push("/");
-
+      redirect("/");
     } catch (err: any) {
       if (err.data.status === 103) {
         setError("email", { type: "manual", message: err.data.message });
         setError("password", { type: "manual", message: err.data.message });
       } else {
-        setDialog({ open: true, message: "Login Gagal, Silahkan Coba Lagi", success: false });
+        setDialog({
+          open: true,
+          message: "Login Gagal, Silahkan Coba Lagi",
+          success: false,
+        });
       }
     }
   };
@@ -49,6 +54,6 @@ export function useLogin() {
     onSubmit,
     isLoading,
     dialog,
-    setDialog
+    setDialog,
   };
 }
