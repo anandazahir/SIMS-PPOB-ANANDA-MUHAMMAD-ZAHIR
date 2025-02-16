@@ -6,7 +6,7 @@ import { AuthHeader } from "@/components/Auth/AuthHeader";
 import { AuthIllustration } from "@/components/Auth/AuthIllustration";
 
 export const metadata: Metadata = {
-  title: `SIMS PPOB`,
+  title: `SIMS PPOB-Ananda Muhammad Zahir`,
   description: "Tugas Take Home Test Front-End Developer NuTech Telkom ",
 };
 

@@ -4,7 +4,7 @@ import "../globals.css";
 import { Navbar } from "@/components/Homepage/navbar";
 
 export const metadata: Metadata = {
-  title: `SIMS PPOB`,
+  title: `SIMS PPOB-Ananda Muhammad Zahir`,
   description: "Tugas Take Home Test Front-End Developer NuTech Telkom ",
 };
 
