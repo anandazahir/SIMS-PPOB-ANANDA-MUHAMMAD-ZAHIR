@@ -17,7 +17,7 @@ export default function LogoutButton() {
   const handleLogout = () => {
     setDialog({ open: true, message: "Anda berhasil logout", success: true });
     cookies.remove("token");
-    redirect("/");
+    redirect("/login");
   };
 
   return (
