@@ -37,7 +37,6 @@ export function ProfileImage({
                 ? profileImage
                 : "/Website Assets/Profile Photo.png"
           }
-          fixi
           alt="Profile"
           width={128}
           height={128}
