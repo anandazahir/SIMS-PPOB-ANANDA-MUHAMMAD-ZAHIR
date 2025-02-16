@@ -1,4 +1,5 @@
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginSchema, LoginRequest } from "@/lib/utils/scheme";
@@ -8,6 +9,7 @@ import { useState } from "react";
 
 export function useLogin() {
   const [loginUser, { isLoading }] = useLoginMutation();
+  const router = useRouter();
   const [dialog, setDialog] = useState<{
     open: boolean;
     message: string;
@@ -32,7 +34,7 @@ export function useLogin() {
       const response = await loginUser(data).unwrap();
       setDialog({ open: true, message: response.message, success: true });
       cookies.set("token", response.data.token, { expires: 7 });
-      redirect("/");
+      router.push("/");
     } catch (err: any) {
       if (err.data.status === 103) {
         setError("email", { type: "manual", message: err.data.message });
